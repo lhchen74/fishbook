@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jinja2</title>
+</head>
+<body>
+    {% set messages = get_flashed_messages() %}
+    {{ messages }}
+    {% with errors = get_flashed_messages(category_filter=["error"]) %}
+        {% if errors %}
+            <ul>
+                {% for msg in errors %}
+                    <li>{{ msg }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

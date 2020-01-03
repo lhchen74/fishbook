@@ -1,0 +1,1 @@
+from app.web.blueprint import web
